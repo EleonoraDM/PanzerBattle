@@ -3,7 +3,6 @@ package core;
 import io.*;
 
 import java.io.IOException;
-import java.util.NoSuchElementException;
 
 public class Engine {
     private InputReader reader;
@@ -25,7 +24,7 @@ public class Engine {
                     break;
                 }
 
-            } catch (IOException e) {
+            } catch (IOException | IllegalArgumentException e) {
                 result = e.getMessage();
             }
             this.writer.println(result);
