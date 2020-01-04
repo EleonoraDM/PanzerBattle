@@ -1,5 +1,7 @@
 package core;
 
+import core.interfaces.BattleOperator;
+import core.interfaces.Manager;
 import io.OutputMessages;
 import models.parts.ArsenalPart;
 import models.parts.EndurancePart;

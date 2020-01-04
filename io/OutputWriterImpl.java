@@ -1,5 +1,7 @@
 package io;
 
+import io.interfaces.OutputWriter;
+
 public class OutputWriterImpl implements OutputWriter {
 
     @Override

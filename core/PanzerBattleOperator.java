@@ -1,5 +1,6 @@
 package core;
 
+import core.interfaces.BattleOperator;
 import models.vehicles.Vehicle;
 
 public class PanzerBattleOperator implements BattleOperator {

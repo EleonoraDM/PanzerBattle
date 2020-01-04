@@ -1,4 +1,4 @@
-package core;
+package core.interfaces;
 
 import models.vehicles.Vehicle;
 

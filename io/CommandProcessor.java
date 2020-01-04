@@ -1,6 +1,6 @@
 package io;
 
-import core.Manager;
+import core.interfaces.Manager;
 import core.ManagerImpl;
 
 import java.util.List;

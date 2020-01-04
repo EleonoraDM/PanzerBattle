@@ -1,4 +1,4 @@
-package io;
+package io.interfaces;
 
 public interface OutputWriter {
     void println(String output);
