@@ -1,5 +1,6 @@
 package models.vehicles;
 
+import common.ExceptionMessages;
 import models.miscellaneous.VehicleAssembler;
 import models.parts.Part;
 
@@ -26,6 +27,46 @@ public abstract class VehicleImpl implements Vehicle {
         this.setDefense(defense);
         this.setHitPoints(hitPoints);
         assembler = new VehicleAssembler();
+    }
+
+    @Override
+    public String getModel() {
+        return this.model;
+    }
+
+    protected void setWeight(double weight) {
+        if (weight <= 0){
+            throw new NullPointerException(ExceptionMessages.INVALID_WEIGHT);
+        }
+        this.weight = weight;
+    }
+
+    protected void setPrice(BigDecimal price) {
+        if (price == null || price.equals(BigDecimal.ZERO)){
+            throw new NullPointerException(ExceptionMessages.INVALID_PRICE);
+        }
+        this.price = price;
+    }
+
+    protected void setAttack(int attack) {
+        if (attack <= 0){
+            throw new NullPointerException(ExceptionMessages.INVALID_ATTACK);
+        }
+        this.attack = attack;
+    }
+
+    protected void setDefense(int defense) {
+        if (defense <= 0){
+            throw new NullPointerException(ExceptionMessages.INVALID_DEFENSE);
+        }
+        this.defense = defense;
+    }
+
+    protected void setHitPoints(int hitPoints) {
+        if (hitPoints <= 0){
+            throw new NullPointerException(ExceptionMessages.INVALID_HIT_POINTS);
+        }
+        this.hitPoints = hitPoints;
     }
 
     @Override
@@ -78,11 +119,6 @@ public abstract class VehicleImpl implements Vehicle {
     }
 
     @Override
-    public String getModel() {
-        return this.model;
-    }
-
-    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
@@ -108,25 +144,5 @@ public abstract class VehicleImpl implements Vehicle {
             sb.append(allParts.stream().map(Part::getModel).collect(Collectors.joining(", ")));
         }
         return sb.toString();
-    }
-
-    protected void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    protected void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    protected void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    protected void setDefense(int defense) {
-        this.defense = defense;
-    }
-
-    protected void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
     }
 }

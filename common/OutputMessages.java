@@ -1,4 +1,4 @@
-package io;
+package common;
 
 public class OutputMessages {
     public static final String VEHICLE_CREATED = "Created %s Vehicle - %s";

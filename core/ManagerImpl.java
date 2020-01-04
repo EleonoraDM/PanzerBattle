@@ -2,7 +2,7 @@ package core;
 
 import core.interfaces.BattleOperator;
 import core.interfaces.Manager;
-import io.OutputMessages;
+import common.OutputMessages;
 import models.parts.ArsenalPart;
 import models.parts.EndurancePart;
 import models.parts.Part;

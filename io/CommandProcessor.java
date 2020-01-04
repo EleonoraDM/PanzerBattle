@@ -1,5 +1,7 @@
 package io;
 
+import common.Commands;
+import common.ExceptionMessages;
 import core.interfaces.Manager;
 import core.ManagerImpl;
 
@@ -26,7 +28,7 @@ public class CommandProcessor {
         } else if (command.toUpperCase().equals(Commands.TERMINATE.name())) {
             result = this.manager.terminate(arguments);
         } else {
-            throw new IllegalArgumentException("Invalid Command");
+            throw new IllegalArgumentException(ExceptionMessages.INVALID_COMMAND);
         }
         return result;
     }
