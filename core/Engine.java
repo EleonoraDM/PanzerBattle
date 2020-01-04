@@ -27,7 +27,7 @@ public class Engine {
                     break;
                 }
 
-            } catch (IOException | IllegalArgumentException e) {
+            } catch (IOException | IllegalArgumentException | NullPointerException e) {
                 result = e.getMessage();
             }
             this.writer.println(result);
