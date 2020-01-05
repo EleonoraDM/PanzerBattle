@@ -13,6 +13,7 @@ import models.vehicles.Vehicle;
 
 import java.math.BigDecimal;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -107,14 +108,19 @@ public class ManagerImpl implements Manager {
         String result = null;
 
         for (Vehicle vehicle : vehicles) {
-            Part currPart = vehicle.getParts().iterator().next();
-            if (currPart.getModel().equals(model)) {
-                searchedPart = currPart;
-                break;
+            Iterator<Part> iterator = vehicle.getParts().iterator();
+
+            while (iterator.hasNext()) {
+                Part currPart = iterator.next();
+
+                if (currPart.getModel().equals(model)) {
+                    searchedPart = currPart;
+                    break;
+                }
             }
-        }
-        if (searchedPart != null) {
-            result = searchedPart.toString();
+            if (searchedPart != null) {
+                result = searchedPart.toString();
+            }
         }
         return result;
     }
